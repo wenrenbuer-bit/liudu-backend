@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: liudu-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://miheappservice:EqnbRoycbmKy7old@liudu.xoy57qm.mongodb.net/?retryWrites=true&w=majority&appName=liudu
+      - key: ADMIN_PHONE
+        value: 18310546510
+      - key: JWT_SECRET
+        value: liudu_jwt_secret_key_2024_production 
