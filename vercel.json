@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/app.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_URI": "mongodb+srv://miheappservice:EqnbRoycbmKy7old@liudu.xoy57qm.mongodb.net/?retryWrites=true&w=majority&appName=liudu",
+    "ADMIN_PHONE": "18310546510",
+    "JWT_SECRET": "liudu_jwt_secret_key_2024_production"
+  }
+} 
