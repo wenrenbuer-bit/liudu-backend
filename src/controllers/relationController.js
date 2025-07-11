@@ -14,7 +14,13 @@ exports.create = async (req, res) => {
 
 // 获取全部关系网（树状结构）
 exports.list = async (req, res) => {
-  const relations = await Relation.find();
+  let relations = await Relation.find();
+  if (relations.length === 0) {
+    // 自动插入“我”节点
+    const me = new Relation({ person: '我', relationType: '本人', level: 1 });
+    await me.save();
+    relations = [me];
+  }
   res.json({ relations });
 };
 
